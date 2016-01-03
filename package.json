@@ -1,6 +1,6 @@
 {
   "name": "initialize-rust",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create a fresh Rust package",
   "main": "index.js",
   "scripts": {
