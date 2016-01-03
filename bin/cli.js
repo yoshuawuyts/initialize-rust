@@ -12,7 +12,7 @@ const main = require('../')
 const opts = cliclopts([
   { name: 'help', abbr: 'h', boolean: true },
   { name: 'version', abbr: 'v', boolean: true },
-  { name: 'directory', abbr: 'd', string: true },
+  { name: 'directory', abbr: 'd', string: true, default: process.cwd() },
   { name: 'user', abbr: 'u', string: true },
   { name: 'name', abbr: 'n', string: true },
   { name: 'description', abbr: 'D', string: true }
