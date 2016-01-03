@@ -1,0 +1,3 @@
+// {{varName}}
+fn main () {
+}

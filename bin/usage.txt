@@ -1,0 +1,15 @@
+Usage: initialize-rust [options]
+
+Options:
+  -h, --help          Output usage information
+  -v, --version       Output version number
+  -d, --directory     Output directory
+  -n, --name          Package name
+  -u, --user          User
+  -D, --description   Package description
+
+Examples:
+  $ initialize-rust   # Create a fresh Rust package
+
+Docs: https://github.com/yoshuawuyts/initialize-rust
+Bugs: https://github.com/yoshuawuyts/initialize-rust/issues

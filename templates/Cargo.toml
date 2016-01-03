@@ -1,0 +1,11 @@
+[package]
+name = "{{name}}"
+version = "1.0.0"
+description = "{{description}}"
+keywords = [{{tags}}]
+
+[lib]
+name = "{{name}}"
+path = "main.rs"
+
+[dependencies]
