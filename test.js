@@ -52,7 +52,7 @@ test('should create files', function (t) {
         t.ok(mode.owner.execute, 'is executable')
       })
 
-      // rimraf.sync(route)
+      rimraf.sync(route)
     }))
   })
 })
