@@ -15,7 +15,7 @@ const opts = cliclopts([
   { name: 'directory', abbr: 'd', string: true },
   { name: 'user', abbr: 'u', string: true },
   { name: 'name', abbr: 'n', string: true },
-  { name: 'description', abbr: 'd', string: true }
+  { name: 'description', abbr: 'D', string: true }
 ])
 
 const argv = minimist(process.argv.slice(2), opts.options())
@@ -29,10 +29,10 @@ if (argv.version) {
   process.stdout.write(pkg.name + ' - ' + pkg.description + '\n')
   usage(0)
 } else {
-  const argv = {}
-  prompt(argv, function (err, argv) {
+  const argvOpts = {}
+  prompt(argvOpts, function (err, argvOpts) {
     if (err) return handleErr(err)
-    main(argv, function (err) {
+    main(argvOpts, function (err) {
       if (err) return handleErr(err)
     })
   })
