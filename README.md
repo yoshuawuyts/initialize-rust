@@ -6,7 +6,7 @@ Create a fresh Rust package.
 
 ## Installation
 ```sh
-$ npm install initialize-rust
+$ npm install -g initialize-rust
 ```
 
 ## Usage

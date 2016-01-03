@@ -29,10 +29,9 @@ if (argv.version) {
   process.stdout.write(pkg.name + ' - ' + pkg.description + '\n')
   usage(0)
 } else {
-  const argvOpts = {}
-  prompt(argvOpts, function (err, argvOpts) {
+  prompt(argv, function (err, argv) {
     if (err) return handleErr(err)
-    main(argvOpts, function (err) {
+    main(argv, function (err) {
       if (err) return handleErr(err)
     })
   })
