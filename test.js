@@ -13,13 +13,20 @@ const init = require('./')
 test('should create files', function (t) {
   t.plan(20)
 
-  const route = path.join(process.cwd(), 'tmp', uuid.v1().slice(0, 6))
-  mkdirp.sync(route)
+  const tmpRoute = path.join(process.cwd(), 'tmp', uuid.v1().slice(0, 6))
+  mkdirp.sync(tmpRoute)
 
   const tags = [ '"foo"', '"bar"', '"gaz"' ]
-  const argv = { directory: route, name: 'foobar', user: 'binbaz', tags: tags }
+  const argv = {
+    directory: tmpRoute,
+    name: 'foobar',
+    user: 'binbaz',
+    tags: tags
+  }
   init(argv, function (err) {
     t.ifError(err, 'no err')
+
+    const route = path.join(tmpRoute, argv.name)
 
     const opts = { root: route, directoryFilter: [ '!node_modules', '!.git' ] }
     readdirp(opts).pipe(concat({ object: true }, function (arr) {

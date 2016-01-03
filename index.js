@@ -30,10 +30,12 @@ function copyFiles (argv, cb) {
 // change to directory
 // (obj, fn) -> null
 function mkdir (argv, cb) {
-  const dir = argv.directory
-  mkdirp(dir, function (err) {
+  const loc = path.resolve(path.join(argv.directory, argv.name))
+  mkdirp(loc, function (err) {
     if (err) return cb(err)
-    process.chdir(dir)
+    process.chdir(loc)
+    argv.directory = loc
+    argv.d = loc
     cb()
   })
 }
